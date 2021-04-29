@@ -10,7 +10,7 @@ workload_subnet_snat_clusternodes="snet-workload"
 workload_subnet_snat_clusternodes_prefix="10.1.0.0/24"
 
 windowsVm="winVm"
-ubuntuVm="ubuntuVm"
+ubuntuVm="ubuntuVm2"
 adminUser="azureuser"
 adminPwd="Password123\!"
 
@@ -36,6 +36,7 @@ az network vnet create \
 
 ## Create Log Analytics workspace
 az monitor log-analytics workspace create -g $rg -n $log
+
 LOGID=$(az monitor log-analytics workspace show --resource-group $rg --workspace-name $log -o tsv --query "id")
 
 ## Create Windows VM
